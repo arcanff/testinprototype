@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head.ejs", {'titulo':'REPORTE'}); %>
+    <body>
+        <%- include("./partials/menu.ejs"); %>
+        <h1>NUEVO REPORTE</h1>
+        <!-- nombre producto_inicial numero_pedido cantidad medida estado producto_final -->
+        <div class="container">
+            <form action="/validar" method="post">
+                <label id="Nombre">NOMBRE</label>
+                <input type="text" name="nombre" id="nombre" />
+
+                <label id="P_inicial">PRODUCTO INICIAL</label>
+                <input type="number" name="p_inicial" id="p_inicial" />
+
+                <label id="N_pedido">NUMERO DE PEDIDO</label>
+                <input type="number" name="n_pedido" id="n_pedido" />
+                <label id="Cantidad">CANTIDAD</label>
+                <input type="number" name="cantidad" id="cantidad" />
+
+                <label id="Medida">MEDIDA</label>
+                <input type="text" name="medida" id="medida" />
+
+                <div class="form-group sucess">
+                    <label for="my-select" id="Estado">ESTADO</label>
+                    <select id="my-select estado" class="form-control" name="estado">
+                        <option value="SIN PROCESAR">SIN PROCESAR</option>
+                        <option value="CORTE">CORTE</option>
+                        <option value="SOLDADURA">SOLDADURA</option>
+                        <option value="EMPAQUE">EMPAQUE</option>
+                        <option value="FINALIZADO">FINALIZADO</option>
+                    </select>
+                </div>
+                <label id="P_final">PRODUCTO FINAL</label>
+                <input type="number" name="p_final" id="p_final" />
+                <input type="submit" value="CREAR REPORTE" />
+            </form>
+        </div>
+    </body>
+</html>

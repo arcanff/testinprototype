@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./partials/head.ejs", {'titulo':'BODEGA'}); %>
+<body>
+    <link rel="stylesheet" href="css/bodega.css">
+    <%- include("./partials/menu.ejs"); %>
+    <body>
+        <div class="content">
+            <h2>Información de Pedidos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Producto Inicial</th>
+                        <th>Número de Pedido</th>
+                        <th>Cantidad</th>
+                        <th>Medida</th>
+                        <th>Estado</th>
+                        <th>Producto Final</th>
+                        <th>Fecha</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% datos.forEach(element=> { %>
+                        <tr>
+                            <td>
+                                <%= element.nombre %>
+                            </td>
+                            <td>
+                                <%= element.producto_inicial %>
+                            </td>
+                            <td>
+                                <%= element.numero_pedido %>
+                            </td>
+                            <td>
+                                <%= element.cantidad %>
+                            </td>
+                            <td>
+                                <%= element.medida %>
+                            </td>
+                            <td>
+                                <%= element.estado %>
+                            </td>
+                            <td>
+                                <%= element.producto_final %>
+                            </td>
+                            <td>
+                                <%= element.fecha %>
+                            </td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+                <!-- Aquí se insertarán las filas con los datos de la base de datos -->
+            </table>
+        </div>
+    </body>
+</html>
